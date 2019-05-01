@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/border_rl_blue"
+    android:elevation="3dp"
+    android:padding="10dp"
+    android:layout_margin="@dimen/margin_small"
+    >
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_standard"
+        android:layout_marginTop="@dimen/margin_standard"
+        android:singleLine="true"
+        android:textColor="@color/putih"
+        android:textSize="@dimen/title_font"
+        android:textStyle="bold"
+        android:maxLines="2"
+        />
+    <TextView
+        android:id="@+id/text_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/putihGelap1"
+        android:textSize="@dimen/text_font"
+        android:layout_below="@+id/text_title"
+        android:layout_marginLeft="@dimen/margin_standard"
+        android:maxLines="1"
+        />
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:id="@+id/rating_kontak"
+        android:layout_below="@+id/text_phone"
+        android:isIndicator="true"
+        />
+
+    <TextView
+        android:id="@+id/text_alamat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/putih"
+        android:textSize="12sp"
+        android:layout_below="@+id/rating_kontak"
+        android:layout_marginLeft="@dimen/margin_standard"
+        android:layout_alignParentRight="true"
+        android:maxLines="3"
+        />
+</RelativeLayout>

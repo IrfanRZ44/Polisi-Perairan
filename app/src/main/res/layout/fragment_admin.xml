@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/putihGelap1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/logo"
+            android:id="@+id/img_logo"
+            android:layout_marginTop="50dp"
+            />
+
+        <RelativeLayout
+            android:id="@+id/rl_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_logo"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/border_rl_putih"
+            android:padding="@dimen/margin_standard">
+
+            <LinearLayout
+                android:id="@+id/ln_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/margin_standard">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Data User"
+                    android:textColor="@color/hitam"
+                    android:textSize="@dimen/title_font"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:text="Nama :"
+                    android:textColor="@color/hitam"
+                    android:textSize="@dimen/title_font" />
+
+                <TextView
+                    android:id="@+id/text_nama"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:textColor="@color/hitam"
+                    android:textSize="@dimen/text_font" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:text="Email  :"
+                    android:textColor="@color/hitam"
+                    android:textSize="@dimen/title_font" />
+
+                <TextView
+                    android:id="@+id/text_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:textColor="@color/hitam"
+                    android:textSize="@dimen/text_font" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:text="Type   :"
+                    android:textColor="@color/hitam"
+                    android:textSize="@dimen/title_font" />
+
+                <TextView
+                    android:id="@+id/text_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_standard"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:textColor="@color/hitam"
+                    android:textSize="@dimen/text_font" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_admin"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/ln_data"
+                android:layout_marginBottom="@dimen/margin_standard"
+                android:background="@drawable/border_rl_blue"
+                android:elevation="@dimen/margin_small">
+
+                <ImageView
+                    android:id="@+id/img_admin"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_admin_white" />
+
+                <TextView
+                    android:id="@+id/text_admin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Menu Admin"
+                    android:textColor="@color/putih"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_logout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/rl_admin"
+                android:background="@drawable/border_btn_red"
+                android:elevation="@dimen/margin_small">
+
+                <ImageView
+                    android:id="@+id/img_log_off"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/log_off" />
+
+                <TextView
+                    android:id="@+id/text_log_off"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Log Out"
+                    android:textColor="@color/putih"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</ScrollView>

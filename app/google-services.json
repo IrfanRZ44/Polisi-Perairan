@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "788175328482",
+    "firebase_url": "https://kepolisian-dc555.firebaseio.com",
+    "project_id": "kepolisian-dc555",
+    "storage_bucket": "kepolisian-dc555.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788175328482:android:d0b4fb78b46c277b",
+        "android_client_info": {
+          "package_name": "com.exomatik.irfanrz.kepolisian"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "788175328482-6e72u2oat2bau97si73cj7ddipn8u2u9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.exomatik.irfanrz.kepolisian",
+            "certificate_hash": "6d09a41daf8e3ea3540b260ae1f4878b04cd8166"
+          }
+        },
+        {
+          "client_id": "788175328482-tqr3s25lll99mhq78ukbm0kng7nl0lj9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaLONNrdvxXwunOWEleKBwX-HVCGYpdZw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "788175328482-tqr3s25lll99mhq78ukbm0kng7nl0lj9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

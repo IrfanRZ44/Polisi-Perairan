@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">Perairan Provinsi Kalimantan</string>
+    <string name="copyright">E-Layanan Kepolisian | All Right Reserved 2018</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="autocomplete_hint">Enter place name or address</string>
+    <string name="selected_place">Last Selected Place:</string>
+    <string name="clear_text">Clear Text</string>
+
+    <string name="place_details">&lt;b&gt;%1$s&lt;/b&gt;&lt;br/&gt;&lt;i&gt;Place Id: %2$s&lt;/i&gt;&lt;br/&gt;Address: %3$s&lt;br/&gt;Phone: %4$s&lt;br/&gt;Website: %5$s</string>
+
+    <string name="judul1">Perpu No. 4 Tahun 1960</string>
+    <string name="judul2">UU No. 1 Tahun 1973</string>
+    <string name="judul3">Tap MPR VI Tahun 1978</string>
+    <string name="judul4">UU No. 5 Tahun !983</string>
+    <string name="judul5">UU No. 17 Tahun 1985</string>
+    <string name="judul6">UU No. 6 Tahun 1996</string>
+    <string name="judul7">PP No. 61 Tahun 1998</string>
+    <string name="judul8">PP No. 38 Tahun 2002</string>
+
+    <string name="hukum1">Indonesia berkedaulatan penuh atas Perairan Indonesia, baik kekayaan lautnya, maupun tanah di bawahnya. Perairan Indonesia terdiri dari dua bagian. Pertama adalah perairan pedalaman, yaitu perairan yang berada di dalam garis dasar. Kedua adalah laut wilayah (laut teritorial) Indonesia selebar dua belas (12) mil laut di luar garis dasar dan diukur tegak lurus terhadapnya. Garis dasar adalah garis-garis lurus yang menghubungkan titik-titik terluar pada garis air rendah dari pulau-pulau atau bagian pulau-pulau terluar wilayah Indonesia dengan ketentuan bahwa jika ada selat yang lebarnya melebihi 24 mil laut dan Negara Indonesia tidak merupakan satu-satunya negara tepi, maka garis batas wilayah Indonesia ditarik pada tengah selat.</string>
+    <string name="hukum2">Landas Kontinen Indonesia adalah dasar laut dan tanah di bawahnya di luar perairan wilayah (teritorial) Republik Indonesia (sebagaimana Perpu no. 4 tahun 1960) sampai kedalaman 200 meter atau lebih (jika memungkinkan). Negara memiliki kuasa penuh dan hak eksklusif atas kekayaan alam di Landas Kontinen Indonesia.
+
+Barang siapa melakukan eksplorasi, eksploitasi, dan penyelidikan ilmiah sumber-sumber kekayaan lain di Landas Kontinen Indonesia, diwajibkan mengambil langkah-langkah untuk:
+
+Mencegah terjadinya pencemaran air laut di Landas Kontinen Indonesia dan udara di atasnya
+Mencegah meluasnya pencemaran dalam hal terjadi pencemaran (maksudnya adalah apabila terjadi pencemaran)
+Dalam melaksanakan eksplorasi dan eksploitasi kekayaan alam di landas kontinen harus diindahkan dan dilindungi kepentingan-kepentingan:
+
+Pertahanan dan keamanan nasional
+Perhubungan
+Telekomunikasi dan transmisi listrik di bawah laut
+Perikanan
+Penyelidikan oseanografi dan penyelidikan ilmiah lainnya
+Cagar alam
+Pelanggaran terhadap UU no. 1 Tahun 1973 ini (saja) diancam hukuman paling lama enam (6) tahun dan/atau denda sebanyak-banyaknya Rp. 1.000.000,- (satu juta rupiah).</string>
+    <string name="hukum3">Ketetapan Majelis Permusyawaratan Rakyat Republik Indonesia (MPR RI) tentang pengukuhan penyatuan wilayah Timor Timur ke dalam Negara Kesatuan Republik Indonesia (NKRI) pada tanggal 17 Juli 1978.</string>
+    <string name="hukum4">Zona Ekonomi Eksklusif Indonesia adalah jalur di luar dan berbatasan dengan laut wilayah (teritorial) Indonesia sebagaimana ditetapkan berdasarkan undang-undang yang berlaku tentang perairan Indonesia yang meliputi dasar laut, tanah di bawahnya, dan air di atasnya dengan batas terluar dua ratus (200) mil laut diukur dari garis pangkal (garis dasar) laut wilayah (teritorial) Indonesia. Apabila Zona Ekonomi Eksklusif Indonesia tumpang tindih dengan zona ekonomi eksklusif negara-negara yang pantainya saling berhadapan atau berdampingan dengan Indonesia, maka batas zona ekonomi eksklusif antara Indonesia dan negara tersebut ditetapkan dengan persetujuan antara Republik Indonesia dan negara yang bersangkutan. Selama persetujuan yang telah tersebut di atas belum ada dan tidak terapat keadaan-keadaan khusus yang perlu dipertimbangkan, maka batas zona ekonomi eksklusif antara Indonesia dan negara tersebut adalah garis sama jarak antara garis-garis pangkal Indonesia dan garis-garis pangkal negara tersebut.
+
+Pada Zona Ekonomi Eksklusif Indonesia, Republik Indonesia mempunyai hak berdaulat untuk eksplorasi dan eksploitasi, pengelolaan dan konservasi sumber daya alam hayati dan non-hayati dari dasar laut serta tanah di bawahnya. Selain itu, Republik Indonesia juga mempunyai yurisdiksi yang berhubungan dengan:
+
+Pembuatan dan penggunaan pulau-pulau buatan , instalasi-instalasi, dan bangunan-bangunan lainnya
+Penelitian ilmiah mengenai kelautan
+Perlindungan dan pelestarian lingkungan laut
+Di Zona Ekonomi Eksklusif Indonesia, kebebasan pelayaran dan penerbangan internasional serta kebebasan pemasangan kabel dan pipa bawah laut diakui sesuai dengan prinsip-prinsip hukum laut internasional yang berlaku.</string>
+    <string name="hukum5">Mengesahkan United Nations Convention the Law of the Sea (Konvensi Perserikatan Bangsa-Bangsa tentang Hukum Laut) yang telah ditandatangani oleh Negara Republik Indonesia bersama seratus belas penandatangan lain di Montego Bay, Jamaica pada 10 Desember 1982.</string>
+    <string name="hukum6">Negara Republik Indonesia adalah Negara Kepulauan. Segala perairan di sekitar, di antara, dan yang menghubungkan pulau-pulau yang termasuk daratan Negara Republik Indonesia merupakan bagian dari perairan Indonesia yang berada di bawah kedaulatan Negara Republik Indonesia. Wilayah Perairan Indonesia meliputi laut teritorial Indonesia yang selebar 12 mil laut dari garis pangkal, perairan kepulauan yaitu perairan yang terletak pada sisi dalam garis pangkal lurus kepulauan, dan perairan pedalaman yaitu semua perairan yang terletak pada sisi darat dari garis air rendah dari pantai-pantai Indonesia. Panjang garis pangkal lurus kepulauan tidak boleh melebihi 100 (seratus) mil laut , kecuali 3% dari jumlah keseluruhan garis-garis pangkal yang mengelilingi kepulauan Indonesia dapat melebihi kepanjangan tersebut hingga 125 (seratus dua puluh lima) mil laut.</string>
+    <string name="hukum7">PP ini berisi tentang garis-garis pangkal kepulauan di Laut Natuna ditarik dari garis-garis air rendah pulau-pulau terluar secara rinci. Dengan berlakunya PP ini, maka perairan Indonesia di sekitar Laut Natuna yang semula merupakan laut lepas (mengacu pada Perpu No. 4 Tahun 1960) serta bagian selatannya yang merupakan bagian dari Zona Ekonomi Eksklusif (sesuai UU No. 5 Tahun 1983), diklaim sebagai Perairan Kepulauan Indonesia (sebelah dalam dari garis pangkal) dan Laut Teritorial Indonesia.</string>
+    <string name="hukum8">Pemerintah menarik garis pangkal kepulauan untuk menetapkan lebar laut teritorial tang dilakukan dengan menggunakan:
+
+Garis pangkal lurus kepulauan
+Yaitu garis lurus yang menggunakan titik-titik terluar pada garis air rendah pada titik terluar pulau terluar, dan karang kering terluar yang lainnya yang berdampingan. Panjangnya tidak boleh melebihi 100 mil laut, kecuali 3% dari jumlah keseluruhan garis pangkal lurus kepulauan dapat melebihi kepanjangan tersebut hingga 125 mil laut.
+
+Garis pangkal biasa
+Yaitu garis air rendah sepanjang pantai yang ditetapkan berdasarkan datum hidrografis yang berlaku.
+
+Garis pangkal lurus
+Yaitu garis yang lurus ditarik antara titik-titik terluar pada garis air rendah yang menonjol dan berseberangan di muka lekukan pantai tersebut. Pada pantai di mana karena terdapat delta atau kondisi alamiah lainnya, garis pantai sangat tidak stabil, garis pangkal untuk mengukur lebar laut teritorial adalah garis pangkal lurus.
+
+Garis penutup teluk
+Yaitu garis lurus yang ditarik antara titik-titik terluar pada garis air rendah yang paling menonjol dan berseberangan pada mulut-mulut teluk tersebut. Garis penutup teluk hanya bisa ditarik apabila luas teluk tersebut adalah seluas atau lebih luas daripada luas setengah lingkaran yang garis tengahnya adalah garis penutup yang ditarik pada mulut teluk tersebut. Apabila pada teluk terdapat pulau-pulau yang membentuk lebih dari satu mulut teluk, maka jumlah panjang garis penutup dari berbagai mulut teluk tersebut maksimum adalah 24 mil laut.
+
+Garis penutup muara sungai, terusan, dan kuala
+Garis pangkal untuk mengukur lebar laut teritorial adalah garis lurus sebagai penutup pada muara sungai, atau terusan tersebut.
+
+Garis penutup pada pelabuhan
+Pada daerah pelabuhan, garis pangkal untuk mengukur lebar laut teritorial adalah garis-garis lurus sebagai penutup daerah pelabuhan, yang meliputi bangunan permanen terluar yang merupakan bagian integral sistem pelabuhan sebagai bagian dari pantai.</string>
+</resources>

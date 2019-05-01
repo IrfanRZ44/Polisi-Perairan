@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.exomatik.irfanrz.kepolisian.Activity.Kontak"
+    android:background="@color/putihGelap1"
+    >
+    <RelativeLayout
+        android:id="@+id/customToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/blue2">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_backward_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="25dp"
+            android:layout_toRightOf="@+id/back"
+            android:gravity="center_vertical"
+            android:text="Kontak"
+            android:textColor="@color/putih"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:id="@+id/text_title_anggota"
+            />
+
+        <ImageView
+            android:layout_width="@dimen/width70"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/margin_small"
+            android:id="@+id/img_phone"
+            android:src="@drawable/ic_phone_green"
+            android:background="@drawable/border_rl_putih"
+            android:layout_centerVertical="true"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_standard"
+        android:layout_margin="@dimen/margin_small"
+        android:layout_below="@+id/customToolbar"
+        android:background="@drawable/border_rl_putih"
+        android:id="@+id/rl_search"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/hitam"
+            android:textSize="@dimen/text_font"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/text_hasil"
+
+            />
+    </RelativeLayout>
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_search"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/blue2"
+        android:padding="@dimen/margin_standard"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_phone"
+            android:textSize="@dimen/text_font"
+            android:textColor="@color/putih"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_alamat"
+            android:textSize="@dimen/text_font"
+            android:textColor="@color/putih"
+            android:layout_below="@+id/text_phone"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/putihGelap1"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_rl_putih"
+            android:layout_margin="@dimen/margin_small"
+            android:padding="@dimen/margin_standard"
+            android:id="@+id/spinner"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hotspot"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/hitam"
+                android:textSize="18sp"
+                android:id="@+id/text_layanan"
+                android:layout_marginBottom="@dimen/margin_standard"
+                />
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_layanan"
+                android:id="@+id/rc_hotspot"
+                >
+
+            </android.support.v7.widget.RecyclerView>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</ScrollView>
