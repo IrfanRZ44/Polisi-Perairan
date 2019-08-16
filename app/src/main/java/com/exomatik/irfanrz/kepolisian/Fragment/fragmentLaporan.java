@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.exomatik.irfanrz.kepolisian.Activity.PengaduanMasyarakat;
 import com.exomatik.irfanrz.kepolisian.ModelClass.Data.ModelPengaduan;
 import com.exomatik.irfanrz.kepolisian.R;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -75,7 +76,7 @@ public class fragmentLaporan extends Fragment {
                 }
                 else{
                     PengaduanMasyarakat.dataUser = new ModelPengaduan(nama, birth, address, work, phone, mail
-                            , "", "", "", "", 0, "");
+                            , "", "", "", "", 0, "", FirebaseInstanceId.getInstance().getToken());
                     startActivity(new Intent(getActivity(), PengaduanMasyarakat.class));
                     getActivity().finish();
                 }

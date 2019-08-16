@@ -70,10 +70,7 @@ public class MenuAdmin extends AppCompatActivity implements ItemClickSupport.OnI
             if (dataSnapshot.exists()){
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
                     ModelPengaduan user = snapshot.getValue(ModelPengaduan.class);
-                    listPengaduan.add(new ModelPengaduan(user.namaUser, user.birthUser, user.addressUser, user.workUser,
-                            user.phoneUser, user.mailUser, user.subjectPengaduan, user.infoKejadian, user.descKejadian,
-                            user.fotoKejadian, user.idPengaduan, user.location
-                    ));
+                    listPengaduan.add(user);
                 }
             }
             RecyclerPengaduan adapterAgenda = new RecyclerPengaduan(listPengaduan);
@@ -99,12 +96,7 @@ public class MenuAdmin extends AppCompatActivity implements ItemClickSupport.OnI
 
     @Override
     public void onItemClicked(RecyclerView recyclerView, int position, View v) {
-        DetailLaporan.detailPengaduan = new ModelPengaduan(listPengaduan.get(position).namaUser, listPengaduan.get(position).birthUser,
-                listPengaduan.get(position).addressUser, listPengaduan.get(position).workUser, listPengaduan.get(position).phoneUser,
-                listPengaduan.get(position).mailUser, listPengaduan.get(position).subjectPengaduan, listPengaduan.get(position).infoKejadian,
-                listPengaduan.get(position).descKejadian, listPengaduan.get(position).fotoKejadian, listPengaduan.get(position).idPengaduan,
-                listPengaduan.get(position).location
-                );
+        DetailLaporan.detailPengaduan = listPengaduan.get(position);
         startActivity(new Intent(MenuAdmin.this, DetailLaporan.class));
         finish();
     }

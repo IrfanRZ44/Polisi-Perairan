@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/border_rl_blue"
+    android:elevation="3dp"
+    android:padding="10dp"
+    android:layout_margin="@dimen/margin_small"
+    >
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imgLaporan"
+        android:scaleType="centerCrop"
+        />
+
+    <TextView
+        android:id="@+id/textNama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_standard"
+        android:layout_marginTop="@dimen/margin_standard"
+        android:singleLine="true"
+        android:layout_toRightOf="@+id/imgLaporan"
+        android:textColor="@color/putih"
+        android:textSize="@dimen/title_font"
+        android:textStyle="bold"
+        android:maxLines="1"
+        />
+    <TextView
+        android:id="@+id/textTanggapan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/putihGelap1"
+        android:textSize="@dimen/text_font"
+        android:layout_below="@+id/textNama"
+        android:layout_toRightOf="@+id/imgLaporan"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginLeft="@dimen/margin_standard"
+        />
+</RelativeLayout>

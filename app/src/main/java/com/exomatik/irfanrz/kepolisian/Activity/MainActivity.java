@@ -4,8 +4,10 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.exomatik.irfanrz.kepolisian.Adapter.ViewPagerAdapter;
+import com.exomatik.irfanrz.kepolisian.Featured.Common;
 import com.exomatik.irfanrz.kepolisian.Fragment.fragmentAdmin;
 import com.exomatik.irfanrz.kepolisian.Fragment.fragmentHotspot;
 import com.exomatik.irfanrz.kepolisian.Fragment.fragmentLogin;
@@ -13,8 +15,21 @@ import com.exomatik.irfanrz.kepolisian.Fragment.fragmentMaps;
 import com.exomatik.irfanrz.kepolisian.Fragment.fragmentHukum;
 import com.exomatik.irfanrz.kepolisian.Fragment.fragmentLaporan;
 import com.exomatik.irfanrz.kepolisian.Fragment.fragmentUser;
+import com.exomatik.irfanrz.kepolisian.Model.MyResponse;
+import com.exomatik.irfanrz.kepolisian.Model.Sender;
 import com.exomatik.irfanrz.kepolisian.ModelClass.User;
 import com.exomatik.irfanrz.kepolisian.R;
+import com.exomatik.irfanrz.kepolisian.Remote.APIService;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.iid.FirebaseInstanceId;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     private TabLayout tabKategori;
@@ -43,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         if (type == null){
             adapterKategori.AddFragment(new fragmentLogin());
         }else if (type.typeUser.equals("Admin")){
+            cekNotifikasi();
             adapterKategori.AddFragment(new fragmentAdmin());
         }
         else{
@@ -109,5 +125,52 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void cekNotifikasi() {
+        Query query = FirebaseDatabase.getInstance()
+                .getReference("notif")
+                .orderByChild("to")
+                .equalTo(currentUser.uid);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()){
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                        final Sender data = snapshot.getValue(Sender.class);
+
+                        APIService mService = Common.getFCMClient();
+
+                        data.setTo(FirebaseInstanceId.getInstance().getToken());
+
+                        mService.sendNotification(data)
+                                .enqueue(new Callback<MyResponse>() {
+                                    @Override
+                                    public void onResponse(Call<MyResponse> call, Response<MyResponse> response) {
+                                        if (response.isSuccessful()){
+                                            hapusNotif(currentUser.uid + "_" + data.getNotification().title);
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onFailure(Call<MyResponse> call, Throwable t) {
+                                        Log.e("Error", t.getMessage().toString());
+                                    }
+                                });
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+    }
+
+    private void hapusNotif(String idRemove) {
+        FirebaseDatabase.getInstance()
+                .getReference("notif")
+                .child(idRemove)
+                .removeValue();
     }
 }

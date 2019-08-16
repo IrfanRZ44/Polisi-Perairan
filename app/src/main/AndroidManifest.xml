@@ -36,6 +36,41 @@
         <activity android:name=".Activity.MenuAdmin" />
         <activity android:name=".Activity.PengaduanMasyarakat" />
         <activity android:name=".Activity.DetailLaporan" />
+
+        <service android:name=".Featured.MyFirebaseIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".Featured.MyFirebaseMessaging"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/logo" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/blue2" />
+
+        <activity android:name=".Notif.SplashNotifUser">
+            <intent-filter>
+                <action android:name="com.exomatik.irfanrz.kepolisian.fcm_TARGET_NOTIFICATION_TO_ADMIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Notif.SplashReplyUser">
+            <intent-filter>
+                <action android:name="com.exomatik.irfanrz.kepolisian.fcm_TARGET_NOTIFICATION_TO_REPLY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -50,7 +85,8 @@
 
         <activity android:name=".Activity.Kontak" />
         <activity android:name=".Activity.BuatHotspot" />
-        <activity android:name=".Activity.DetailHotspot"></activity>
+        <activity android:name=".Activity.DetailHotspot" />
+        <activity android:name=".Activity.ReplyUser"></activity>
     </application>
 
 </manifest>

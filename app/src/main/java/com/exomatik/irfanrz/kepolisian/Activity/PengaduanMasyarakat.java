@@ -3,11 +3,14 @@ package com.exomatik.irfanrz.kepolisian.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -15,8 +18,14 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.exomatik.irfanrz.kepolisian.Featured.Common;
+import com.exomatik.irfanrz.kepolisian.Model.MyResponse;
+import com.exomatik.irfanrz.kepolisian.Model.Notification;
+import com.exomatik.irfanrz.kepolisian.Model.Sender;
 import com.exomatik.irfanrz.kepolisian.ModelClass.Data.ModelPengaduan;
+import com.exomatik.irfanrz.kepolisian.ModelClass.User;
 import com.exomatik.irfanrz.kepolisian.R;
+import com.exomatik.irfanrz.kepolisian.Remote.APIService;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
@@ -29,13 +38,19 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class PengaduanMasyarakat extends AppCompatActivity {
     private ImageView back;
@@ -116,7 +131,7 @@ public class PengaduanMasyarakat extends AppCompatActivity {
                     progressDialog.setCancelable(false);
                     progressDialog.show();
                     getId(v, new ModelPengaduan(dataUser.namaUser, dataUser.birthUser, dataUser.addressUser, dataUser.workUser,
-                            dataUser.phoneUser, dataUser.mailUser, subject, place, desc, "", 0, latitude
+                            dataUser.phoneUser, dataUser.mailUser, subject, place, desc, "", 0, latitude, FirebaseInstanceId.getInstance().getToken()
                             ));
                 }
             }
@@ -147,7 +162,8 @@ public class PengaduanMasyarakat extends AppCompatActivity {
                 id++;
                 uploadBerita(v, new ModelPengaduan(dataPengaduan.namaUser, dataPengaduan.birthUser, dataPengaduan.addressUser,
                         dataPengaduan.workUser, dataPengaduan.phoneUser, dataPengaduan.mailUser, dataPengaduan.subjectPengaduan,
-                        dataPengaduan.infoKejadian, dataPengaduan.descKejadian, dataPengaduan.fotoKejadian, id, dataPengaduan.location
+                        dataPengaduan.infoKejadian, dataPengaduan.descKejadian, dataPengaduan.fotoKejadian, id, dataPengaduan.location,
+                        FirebaseInstanceId.getInstance().getToken()
                 ));
             }
 
@@ -183,8 +199,8 @@ public class PengaduanMasyarakat extends AppCompatActivity {
                 DatabaseReference database = FirebaseDatabase.getInstance().getReference();
                 ModelPengaduan data = new ModelPengaduan(savePengaduan.namaUser, savePengaduan.birthUser, savePengaduan.addressUser,
                         savePengaduan.workUser, savePengaduan.phoneUser, savePengaduan.mailUser, savePengaduan.subjectPengaduan,
-                        savePengaduan.infoKejadian, savePengaduan.descKejadian, uri, savePengaduan.idPengaduan, savePengaduan.location
-                        );
+                        savePengaduan.infoKejadian, savePengaduan.descKejadian, uri, savePengaduan.idPengaduan, savePengaduan.location,
+                        FirebaseInstanceId.getInstance().getToken());
                 database.child("pengaduan")
                         .child(data.idPengaduan + "_" + data.subjectPengaduan)
                         .setValue(data)
@@ -193,6 +209,7 @@ public class PengaduanMasyarakat extends AppCompatActivity {
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
                                     progressDialog.dismiss();
+                                    getUserAdmin();
                                     Toast.makeText(PengaduanMasyarakat.this, "Subject Sudah Dikirim", Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(PengaduanMasyarakat.this, MainActivity.class));
                                     finish();
@@ -210,6 +227,70 @@ public class PengaduanMasyarakat extends AppCompatActivity {
                 Toast.makeText(PengaduanMasyarakat.this, "errror " + e.getMessage().toString(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void getUserAdmin() {
+        Query query = FirebaseDatabase.getInstance()
+                .getReference("users")
+                .orderByChild("typeUser")
+                .equalTo("Admin");
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        User data = snapshot.getValue(User.class);
+
+                        Notification notification = new Notification("Ada laporan dari masyarakat yang masuk"
+                                , "Laporan Pengaduan"
+                                , "com.exomatik.irfanrz.kepolisian.fcm_TARGET_NOTIFICATION_TO_ADMIN");
+
+                        if (data.token == null){
+                            Sender sender = new Sender(data.uid
+                                    , notification);
+                            simpanNotif(sender);
+                        }
+                        else {
+                            Sender sender = new Sender(data.token
+                                    , notification);
+                            sendNotif(sender);
+                        }
+                    }
+                } else {
+                    Log.e("Error", "Tidak ada user admin");
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e("Error", databaseError.getMessage().toString());
+            }
+        });
+    }
+
+    private void simpanNotif(Sender sender) {
+        FirebaseDatabase.getInstance()
+                .getReference("notif")
+                .child(sender.getTo() + "_" + sender.getNotification().title)
+                .setValue(sender);
+    }
+
+    private void sendNotif(Sender sender){
+        APIService mService = Common.getFCMClient();
+
+        mService.sendNotification(sender)
+                .enqueue(new Callback<MyResponse>() {
+                    @Override
+                    public void onResponse(Call<MyResponse> call, Response<MyResponse> response) {
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<MyResponse> call, Throwable t) {
+                        Log.e("Error", t.getMessage().toString());
+                    }
+                });
     }
 
     @Override

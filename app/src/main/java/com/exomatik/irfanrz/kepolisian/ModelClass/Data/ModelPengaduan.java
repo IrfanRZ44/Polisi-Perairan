@@ -17,8 +17,9 @@ public class ModelPengaduan {
     public String fotoKejadian;
     public int idPengaduan;
     public String location;
+    public String token;
 
-    public ModelPengaduan(String namaUser, String birthUser, String addressUser, String workUser, String phoneUser, String mailUser, String subjectPengaduan, String infoKejadian, String descKejadian, String fotoKejadian, int idPengaduan, String location) {
+    public ModelPengaduan(String namaUser, String birthUser, String addressUser, String workUser, String phoneUser, String mailUser, String subjectPengaduan, String infoKejadian, String descKejadian, String fotoKejadian, int idPengaduan, String location, String token) {
         this.namaUser = namaUser;
         this.birthUser = birthUser;
         this.addressUser = addressUser;
@@ -31,6 +32,7 @@ public class ModelPengaduan {
         this.fotoKejadian = fotoKejadian;
         this.idPengaduan = idPengaduan;
         this.location = location;
+        this.token = token;
     }
 
     public ModelPengaduan() {

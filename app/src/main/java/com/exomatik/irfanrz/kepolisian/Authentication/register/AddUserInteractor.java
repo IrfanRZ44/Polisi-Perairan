@@ -14,6 +14,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.Iterator;
 
@@ -35,7 +36,8 @@ public class AddUserInteractor implements AddUserContract.Interactor  {
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();
         User user = new User(firebaseUser.getUid(),
                 firebaseUser.getEmail(),
-                new SharedPrefUtil(context).getString("firebaseToken"), "user", nama, idMhs);
+                new SharedPrefUtil(context).getString("firebaseToken"), "user", nama, idMhs,
+                FirebaseInstanceId.getInstance().getToken());
         database.child("users")
                 .child(firebaseUser.getUid())
                 .setValue(user)

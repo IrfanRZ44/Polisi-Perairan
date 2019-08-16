@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.exomatik.irfanrz.kepolisian.Activity.ReplyUser"
+    android:background="@color/putihGelap1"
+    >
+
+    <RelativeLayout
+        android:id="@+id/customToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/blue2">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_backward_white" />
+
+        <TextView
+            android:id="@+id/text_title_anggota"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="25dp"
+            android:layout_toRightOf="@+id/back"
+            android:gravity="center_vertical"
+            android:text="Tanggapan Laporan"
+            android:textColor="@color/putih"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="@dimen/width70"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_small"
+            android:src="@drawable/logo"
+            />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rcReply"
+        android:layout_below="@+id/customToolbar"
+        android:layout_margin="@dimen/margin_standard"
+        >
+
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

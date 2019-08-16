@@ -14,6 +14,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.Iterator;
 
@@ -62,8 +63,8 @@ class LoginInteractor implements LoginContract.Interactor {
                 .getReference()
                 .child("users")
                 .child(uid)
-                .child("firebaseToken")
-                .setValue(token);
+                .child("token")
+                .setValue(FirebaseInstanceId.getInstance().getToken());
     }
 
     private void cekTypeUser() {
